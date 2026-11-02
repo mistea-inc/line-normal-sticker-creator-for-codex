@@ -1,0 +1,211 @@
+{
+  "recorded_on": "2026-11-02",
+  "recorded_os": "macOS",
+  "dimensions": [
+    1404,
+    962
+  ],
+  "sampling_fps": 15,
+  "clips": [
+    {
+      "id": "01",
+      "title": "作業フォルダの用意",
+      "gif": "01_作業フォルダの作成.gif",
+      "poster": "posters/01.jpg",
+      "sha256": "5bfdef90841e012dacf8181063aa84b7c68d744cd80fa3eca0c0328bec4c3b3e",
+      "duration_seconds": 7.73,
+      "bytes": 4032874,
+      "poster_sha256": "4814e8560034865fa483f6d8e8cc2b604ee47765c1d8c6c4c8bad92e9b54c2dc"
+    },
+    {
+      "id": "02",
+      "title": "Codexでフォルダを開く",
+      "gif": "02_Codexプロジェクトの作成.gif",
+      "poster": "posters/02.jpg",
+      "sha256": "e888caa2d7f4d31dd949103f5445b80c4b0387730668fb6f70be8fdb2b302b63",
+      "duration_seconds": 17.07,
+      "bytes": 1791327,
+      "poster_sha256": "a17723b3e0f9d4a840def80da0e192d0eec3d133bae10f8b3f38f731ecb21d5c"
+    },
+    {
+      "id": "03",
+      "title": "セットアップの依頼",
+      "gif": "03_リポジトリのセットアップ依頼.gif",
+      "poster": "posters/03.jpg",
+      "sha256": "cb2aebf4a038034697c574de3b74c6920a04adf5ed86aced9545e5a0db5ecbd2",
+      "duration_seconds": 11.4,
+      "bytes": 12667466,
+      "poster_sha256": "161bb0d4aa89ff5d614ed3b9e89e38fe1eaf3fe5cb8e08d0d3d39b163894373a"
+    },
+    {
+      "id": "04",
+      "title": "権限と起動の確認",
+      "gif": "04_権限設定と起動確認.gif",
+      "poster": "posters/04.jpg",
+      "sha256": "577082dc7adcc588e4f4b90fc212dd0d67dc8de619245b08e8fd4fdc51591c71",
+      "duration_seconds": 15.27,
+      "bytes": 3954312,
+      "poster_sha256": "c4e935432442cd7606eac49129a29bbc6b6f86d3ea3d2eff4121cd1c65f2a529"
+    },
+    {
+      "id": "05",
+      "title": "参考画像と希望の共有",
+      "gif": "05_参考画像と制作内容の指定.gif",
+      "poster": "posters/05.jpg",
+      "sha256": "ac4a07f7f16467425a4c0945a4885cc1c63d603e2061145981b79abf2bddc5ae",
+      "duration_seconds": 14.8,
+      "bytes": 1242143,
+      "poster_sha256": "0134cebfebbd35ed00be798fd072758280c7be91930c4236d99cf551506f4cbc"
+    },
+    {
+      "id": "06",
+      "title": "枚数とセリフの決定",
+      "gif": "06_枚数とセリフの決定.gif",
+      "poster": "posters/06.jpg",
+      "sha256": "a635fafaf1aab154a3e03cb48e8ed120796b29418255c0b5bed998a6b827a5df",
+      "duration_seconds": 12.07,
+      "bytes": 1840082,
+      "poster_sha256": "13e9a12ea752f9b0e2dba7e8edd9e25d6e609cf55a0bee5a3c857f2f8d50df17"
+    },
+    {
+      "id": "07",
+      "title": "原画とサンプルの確認",
+      "gif": "07_原画と文字入りサンプルの確認.gif",
+      "poster": "posters/07.jpg",
+      "sha256": "703f5d1a76db7ef9ff6b522752783d55b25afcf7961f49b27a3e7c7dea550060",
+      "duration_seconds": 9.0,
+      "bytes": 1605079,
+      "poster_sha256": "1fd43c07938fc8223716ea265b35a7f11e20818afff1976db6b9af0918db6f2c"
+    },
+    {
+      "id": "08",
+      "title": "サンプルの承認",
+      "gif": "08_サンプル承認と制作続行.gif",
+      "poster": "posters/08.jpg",
+      "sha256": "80afbccb7e03bbf7655f87acecfb1f4774e1362a95ba5641b8beca2616c21f9b",
+      "duration_seconds": 8.8,
+      "bytes": 1426413,
+      "poster_sha256": "d5b12a46dc7a9f18461f48d8b393fc2fdb6c5883c651b9b4a25e51052d324641"
+    },
+    {
+      "id": "09",
+      "title": "セット全体の見比べ",
+      "gif": "09_セット全体の確認.gif",
+      "poster": "posters/09.jpg",
+      "sha256": "14fee2df9979543d5062df2ebc759aedcb78afd552df395b2d2590d009e5a686",
+      "duration_seconds": 6.4,
+      "bytes": 2127490,
+      "poster_sha256": "656b8ab06eae40c3662b387c3003a82a6da60076caa5dd95b2c1ecd62e826c1c"
+    },
+    {
+      "id": "10",
+      "title": "書体と文字配置の修正",
+      "gif": "10_書体と文字配置の修正依頼.gif",
+      "poster": "posters/10.jpg",
+      "sha256": "f4f47c7e5e0c34972e01eeb7f45781a9f673ceccc54bb0d1dda0f1db52e1b0d1",
+      "duration_seconds": 20.0,
+      "bytes": 2193843,
+      "poster_sha256": "2f8d54610c4bd5616b10b9b2b36d318acfd6aa6e9980fa8b2e289a70b557297f"
+    },
+    {
+      "id": "11",
+      "title": "確認する単位の指定",
+      "gif": "11_4点ずつのレビュー依頼.gif",
+      "poster": "posters/11.jpg",
+      "sha256": "b4b14b8c8a14b431d9667c50dff3a237fc84afdfb1657d69705f29fb7dea3f4d",
+      "duration_seconds": 15.67,
+      "bytes": 5250687,
+      "poster_sha256": "b35e0c2c3a34ce756e38f5d479cbd987bed62e7023a8188ebe5f0f08f09c3432"
+    },
+    {
+      "id": "12",
+      "title": "VectorCraftで微調整",
+      "gif": "12_VectorCraftで文字の微調整.gif",
+      "poster": "posters/12.jpg",
+      "sha256": "0227988eb7647def0f4ab2cd2c7207432c6d9d9dd4afc2eafa068ec4c4b16e21",
+      "duration_seconds": 17.0,
+      "bytes": 3372869,
+      "poster_sha256": "d15b7de5f5c907d888509bd9633874113f0bdfae2bf6feba65e956871874cf3e"
+    },
+    {
+      "id": "13",
+      "title": "完了報告と次のセット",
+      "gif": "13_完了報告と次の4点への切り替え.gif",
+      "poster": "posters/13.jpg",
+      "sha256": "fb63b7aea0e97558f490d58693af3ca4b30ff959aaacb7568e7321c3c8b6b3d8",
+      "duration_seconds": 15.6,
+      "bytes": 1915556,
+      "poster_sha256": "3889ef2974faf7bc5eb586fca3f0c31b51dac7495fd01a213746db989e56f690"
+    },
+    {
+      "id": "14",
+      "title": "PNGと登録用ZIPの受け取り",
+      "gif": "14_PNGと登録用ZIPの準備.gif",
+      "poster": "posters/14.jpg",
+      "sha256": "06a1271290fbc41eb22099ac97ca4e1ef560371748a5637e17fa1c09390ad38b",
+      "duration_seconds": 19.07,
+      "bytes": 2127340,
+      "poster_sha256": "4185232284d460860feb89b144874584176f5c7155917d9a5aafc734a48fdbd8"
+    },
+    {
+      "id": "15",
+      "title": "登録する文面の確定",
+      "gif": "15_名前表記と登録文面の調整.gif",
+      "poster": "posters/15.jpg",
+      "sha256": "ca0d4de05e1409a6f932c038917031059df58b132a2128a605d057bdbd689241",
+      "duration_seconds": 13.54,
+      "bytes": 8542947,
+      "poster_sha256": "34314f0360229b484ef3bc63e00661de410923e4311c309150b48e8680592c94"
+    },
+    {
+      "id": "16",
+      "title": "LINEの表示情報と販売情報",
+      "gif": "16_LINEの表示情報と販売情報の入力.gif",
+      "poster": "posters/16.jpg",
+      "sha256": "e6acb14f0f13b779628c6c9427521d2b307794a9f05c251552f4c74315717323",
+      "duration_seconds": 20.87,
+      "bytes": 7901331,
+      "poster_sha256": "2d4fdaab9dedd02aaee3870dbe8fc0170267ba856ece6645509ccc04c8c470d6"
+    },
+    {
+      "id": "17",
+      "title": "登録用ZIPのアップロード",
+      "gif": "17_登録用ZIPのアップロード.gif",
+      "poster": "posters/17.jpg",
+      "sha256": "93793daeb5289fde7056e221c8526b3a1d18a7330de5b2207b7b238444ef55cc",
+      "duration_seconds": 19.87,
+      "bytes": 6672430,
+      "poster_sha256": "682ee0ec66d7aa206cc40c24d4194627221650dd2bce51fbc8d3abb7c50b0316"
+    },
+    {
+      "id": "18",
+      "title": "各スタンプのタグ設定",
+      "gif": "18_スタンプのタグ設定.gif",
+      "poster": "posters/18.jpg",
+      "sha256": "a7e8d16ba8694792ed58aa3185708cf7a8e4a37fe0ee63e2353e9518866746c4",
+      "duration_seconds": 20.67,
+      "bytes": 2343548,
+      "poster_sha256": "d5cc9343e9d96efc65d8d6e9e4a6aea1ac21ebb6c5a2ebf3f33843808742f6ac"
+    },
+    {
+      "id": "19",
+      "title": "販売価格の確認",
+      "gif": "19_販売価格の確認.gif",
+      "poster": "posters/19.jpg",
+      "sha256": "adf1800575a76025cdcb8ef74efab4a7a1852592fb8a7ac2f24950586d774048",
+      "duration_seconds": 7.0,
+      "bytes": 6062810,
+      "poster_sha256": "d4e5a20e348703cbd744a348ffa5a94af5fad120c3c5c66c93aad739637400a0"
+    },
+    {
+      "id": "20",
+      "title": "審査リクエストと審査待ち",
+      "gif": "20_審査リクエストと審査待ちの確認.gif",
+      "poster": "posters/20.jpg",
+      "sha256": "4d70420ee0957d6177976de7ea03ac3b562527069e89a75b2716490de3edb92b",
+      "duration_seconds": 8.54,
+      "bytes": 1949940,
+      "poster_sha256": "98d6922cbdb407ed9d039d5f55ed02bc7f52e05bc10be0d113511f89e82fa8e9"
+    }
+  ]
+}
