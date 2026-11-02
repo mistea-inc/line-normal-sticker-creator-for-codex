@@ -1,0 +1,199 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GIFで見るLINEスタンプ制作</title><style>
+:root{color-scheme:light;--ink:#24332d;--muted:#5b6c63;--line:#dbe5df;--accent:#087c43}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f4f7f5;color:var(--ink);font:16px/1.85 system-ui,-apple-system,'Segoe UI','Noto Sans JP',sans-serif}
+main{max-width:1060px;margin:32px auto;padding:40px 52px;background:#fff;border:1px solid var(--line);border-radius:16px}
+h1{font-size:2rem;line-height:1.45;margin:0 0 24px}h2{font-size:1.35rem;margin:52px 0 18px;padding-top:22px;border-top:2px solid var(--line);scroll-margin-top:24px}
+p,ul,ol{margin:16px 0}li{padding:3px 0}a{color:var(--accent);text-underline-offset:3px}code{padding:2px 5px;background:#eff3f1;border-radius:4px;font-size:.9em;overflow-wrap:anywhere}
+table{width:100%;border-collapse:collapse;margin:22px 0;font-size:.95rem}th,td{padding:12px 14px;border:1px solid var(--line);text-align:left;vertical-align:top}th{background:#edf5f0}td:first-child{min-width:145px}
+img{display:block;max-width:100%;height:auto;margin:22px 0 8px;border:1px solid #dce2df;border-radius:5px;cursor:zoom-in}p:has(img){margin:22px 0}
+.guide-nav{display:flex;gap:8px;flex-wrap:wrap;margin:24px 0}.guide-nav a{border:1px solid var(--line);padding:5px 12px;border-radius:8px;text-decoration:none;background:#f7faf8}
+.tip{font-size:.9rem;color:var(--muted);margin-bottom:28px}dialog{border:0;border-radius:10px;max-width:96vw;max-height:94vh;padding:18px;overflow:auto}dialog::backdrop{background:#14271ed9}dialog img{max-width:none;margin:0;cursor:default}.close{position:sticky;top:0;float:right;z-index:2;font:inherit;padding:6px 14px;background:#fff;border:1px solid #bccdc3;border-radius:7px;cursor:pointer}
+@media(max-width:700px){main{margin:0;border:0;border-radius:0;padding:25px 18px}h1{font-size:1.6rem}table{font-size:.85rem}th,td{padding:8px}td:first-child{min-width:95px}}
+@media print{body{background:white}main{margin:0;padding:0;border:0}.guide-nav,.tip{display:none}h2{break-after:avoid}img{max-height:70vh;object-fit:contain;break-inside:avoid}a{color:inherit}}
+
+blockquote{margin:20px 0;padding:12px 20px;border-left:4px solid var(--accent);background:#f0f7f3}
+blockquote p{margin:6px 0}.workflow-demo{margin:26px 0 34px}
+.workflow-player{display:block;width:100%;padding:0;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#17283b;cursor:pointer;color:white;font:inherit}
+.workflow-player img{display:block;width:100%;height:auto;max-height:none;margin:0;border:0;border-radius:0;cursor:pointer}
+.workflow-player span{display:block;padding:9px 16px;background:#087c43;text-align:left}
+.workflow-player:focus-visible{outline:3px solid #087c43;outline-offset:4px}
+.workflow-demo figcaption{font-size:.9rem;margin-top:8px;color:var(--muted)}
+@media print{.workflow-player span,.workflow-demo figcaption{display:none}.workflow-demo{break-inside:avoid}}
+</style></head><body><main><h1>GIFで見るLINEスタンプ制作</h1>
+<p>参考画像を用意し、Codexと相談しながらスタンプを作る手順です。セットアップや書き出しはCodexに頼み、あなたは希望を伝えてデザインを確認します。</p>
+<p><strong>準備 → 参考画像と企画 → サンプル → 全体制作 → 個別調整 → PNGとZIP → LINEへの登録</strong></p>
+<p>各工程の画像または「GIFを再生」を押すと、その工程の操作例を再生できます。もう一度押すと停止します。別の工程を再生すると、前のGIFは停止します。</p>
+<p>操作例は2026-11-02に収録したmacOSの画面です。待機時間を省いています。動画内のキャラクター、8点の構成、セリフ、価格は一つの制作例なので、あなたの作品に合わせて決めてください。Windows・Linuxでは、フォルダ選択や権限設定の画面が異なります。</p>
+<h2>はじめる前の準備</h2>
+<p>画像生成ツールが有効で、ファイル操作とコマンド実行ができるCodexを使います。VectorCraftを表示できるデスクトップ環境と、初回セットアップ用のネットワーク接続も必要です。詳しい環境条件は<a href="setup.md">セットアップ</a>を参照してください。</p>
+<p>あなたが使用できるキャラクター画像を用意します。キャラクターの設定や、変えてほしくない特徴があれば一緒に伝えます。</p>
+<nav class="guide-nav" aria-label="制作手順へのリンク"><a href="#step-01">01–04 準備</a><a href="#step-05">05–06 企画</a><a href="#step-07">07–10 制作</a><a href="#step-11">11–13 調整</a><a href="#step-14">14–15 出力</a><a href="#step-16">16–20 登録</a></nav>
+
+<p><a id="step-01"></a></p>
+<h2>01　作業フォルダの用意</h2>
+<p>制作に使う保存先を決めます。リポジトリを取得済みなら、そのフォルダをそのまま使えます。まだ取得していない場合は、工程03でCodexに取得先のURLと保存先を伝えます。</p>
+<p><strong>確認すること：</strong> 後で開き直せる場所になっていること。既存の作品があるフォルダを、空の作業場所として作り直さないこと。</p>
+<p><a href="assets/workflow/01_作業フォルダの作成.gif"><img alt="工程01　作業フォルダの用意" src="assets/workflow/posters/01.jpg" /></a></p>
+<p><a id="step-02"></a></p>
+<h2>02　Codexでフォルダを開く</h2>
+<p>Codexで新しいプロジェクトを作り、作業フォルダを選びます。フォルダを信頼するか聞かれたら、選んだ場所を確認して進めます。</p>
+<p><strong>確認すること：</strong> プロジェクト名とソースフォルダが、今回の制作に使うものと一致していること。</p>
+<p><a href="assets/workflow/02_Codexプロジェクトの作成.gif"><img alt="工程02　Codexでフォルダを開く" src="assets/workflow/posters/02.jpg" /></a></p>
+<p><a id="step-03"></a></p>
+<h2>03　セットアップの依頼</h2>
+<p>未取得ならこのリポジトリのGitHub URLを伝え、取得とセットアップをCodexに依頼します。取得済みのフォルダを開いた場合は、そのまま次のように伝えます。</p>
+<blockquote>
+<p>このリポジトリをセットアップしてください。参考画像からLINEスタンプを作りたいです。まずサンプル1点から進めてください。</p>
+</blockquote>
+<p>必要な環境はCodexが確認します。すでに使えるVectorCraftがあれば、その場所も伝えます。リポジトリを開いただけで準備が完了するわけではないので、セットアップ完了の報告まで確認します。</p>
+<p><a href="assets/workflow/03_リポジトリのセットアップ依頼.gif"><img alt="工程03　セットアップの依頼" src="assets/workflow/posters/03.jpg" /></a></p>
+<p><a id="step-04"></a></p>
+<h2>04　権限と起動の確認</h2>
+<p>画面操作などの権限を求められた場合は、用途と対象アプリを確認します。設定後、VectorCraftのウィンドウが表示され、日本語が正しく表示できることを確認します。</p>
+<p>画面が出ない場合は、Codexに「VectorCraftの画面が表示されていません」と伝えます。WSL2を使う場合は、そのことも伝えてください。</p>
+<p><a href="assets/workflow/04_権限設定と起動確認.gif"><img alt="工程04　権限と起動の確認" src="assets/workflow/posters/04.jpg" /></a></p>
+<p><a id="step-05"></a></p>
+<h2>05　参考画像と希望の共有</h2>
+<p>作業フォルダの <code>input/references/</code> に参考画像を置き、Codexに知らせます。別の場所にある画像のパスを伝えて、取り込んでもらうこともできます。</p>
+<blockquote>
+<p>参考画像を置きました。このキャラクターで、友だちにも仕事相手にも使いやすい丁寧なスタンプを作りたいです。顔・配色・体型・衣装を元画像に合わせてください。</p>
+</blockquote>
+<p>Codexが元画像を見てから制作を始めます。左右で異なる衣装や小物がある場合は、左右も維持するよう伝えます。元の参考画像は保持し、作品ごとにもコピーを保存します。</p>
+<p><a href="assets/workflow/05_参考画像と制作内容の指定.gif"><img alt="工程05　参考画像と希望の共有" src="assets/workflow/posters/05.jpg" /></a></p>
+<p><a id="step-06"></a></p>
+<h2>06　枚数とセリフの決定</h2>
+<p>誰に、どんな場面で使いたいかを伝え、枚数・口調・セリフ・掲載順を相談します。枚数は制作時点の<a href="https://creator.line.me/ja/guideline/sticker/">LINE公式ガイドライン</a>に合わせて決めます。</p>
+<p>質問には「？」を付けるなど、約物も確認します。「！」は伝えたい気持ちに合わせて使います。日本語・英語の名前表記、タイトルと説明の候補・確定の区別も記録していきます。</p>
+<p><strong>確認すること：</strong> 日常で使う場面が浮かぶこと、希望した口調であること、セリフが勝手に短縮されていないこと。</p>
+<p><a href="assets/workflow/06_枚数とセリフの決定.gif"><img alt="工程06　枚数とセリフの決定" src="assets/workflow/posters/06.jpg" /></a></p>
+<p><a id="step-07"></a></p>
+<h2>07　原画とサンプルの確認</h2>
+<p>Codexが参考画像を基に、文字なし・背景透過の原画を生成し、作品フォルダの <code>artwork/</code> に保存します。その後、VectorCraftで文字や装飾を重ね、代表サンプルを作ります。</p>
+<p>顔・髪・体型・衣装・配色・左右・手指・見切れ・透過を元画像と比べます。原画に不要な文字やロゴ、透かし、後から付ける装飾が焼き込まれていないことも確認します。問題があれば、全体制作へ進む前に修正を頼みます。</p>
+<p>制作中のキャンバスは基本1:1とし、提出用PNGは後で登録仕様に合わせます。顔アップなどへのトリミングは、表情やポーズが伝わるかを見て決めます。</p>
+<p><a href="assets/workflow/07_原画と文字入りサンプルの確認.gif"><img alt="工程07　原画とサンプルの確認" src="assets/workflow/posters/07.jpg" /></a></p>
+<p><a id="step-08"></a></p>
+<h2>08　サンプルの承認</h2>
+<p>サンプルの方向性がよければ、その方針で残りの制作を依頼します。</p>
+<blockquote>
+<p>この方向で進めてください。各セリフの感情やポーズに合わせて、フォント・色・文字の位置は変えて構いません。</p>
+</blockquote>
+<p>サンプルで決めるのはデザインの判断基準です。全点を同じ座標・書体・配色に固定するテンプレートとしては扱いません。ブランド規定がある場合も、今回どこまで適用するかを伝えます。</p>
+<p><a href="assets/workflow/08_サンプル承認と制作続行.gif"><img alt="工程08　サンプルの承認" src="assets/workflow/posters/08.jpg" /></a></p>
+<p><a id="step-09"></a></p>
+<h2>09　セット全体の見比べ</h2>
+<p>全体を並べた画像で、同じキャラクターに見えるか、表情・ポーズ・構図に変化があるかを確認します。各スタンプが伝える感情は一つに絞り、使う頻度や相手から見た向きも考えて並び順を決めます。</p>
+<p>よく使うセリフは探しやすい位置へ置きます。MainとTabも、それぞれの用途に合う顔の大きさや文字の有無を決め、確認対象に含めます。</p>
+<p><a href="assets/workflow/09_セット全体の確認.gif"><img alt="工程09　セット全体の見比べ" src="assets/workflow/posters/09.jpg" /></a></p>
+<p><a id="step-10"></a></p>
+<h2>10　書体と文字配置の修正</h2>
+<p>直したい箇所は、画像番号と希望を具体的に伝えます。</p>
+<blockquote>
+<p>02は手書き風の太めの書体にしてください。文字をもう少し大きくして、2行の間隔を詰めたいです。キャラクターとの重なりも使って、絵と文字に一体感を出してください。</p>
+</blockquote>
+<p>文字は毎回足元へ押し出さず、上部・下部・吹き出し・斜め・曲線・縦書きなどから選びます。キャラクターとの重なりは使ってよく、可読性と表情の伝わり方で判断します。明暗どちらの背景でも読める色や縁取りを使います。</p>
+<p><a href="assets/workflow/10_書体と文字配置の修正依頼.gif"><img alt="工程10　書体と文字配置の修正" src="assets/workflow/posters/10.jpg" /></a></p>
+<p><a id="step-11"></a></p>
+<h2>11　確認する単位の指定</h2>
+<p>一つずつ微調整するため、開いてもらう枚数を決めます。</p>
+<blockquote>
+<p>4点ずつ確認します。まず最初の4点を、1スタンプ1ファイルで別々のタブに開いてください。終わったら報告します。</p>
+</blockquote>
+<p>4点は確認単位の例です。自分が見比べやすい枚数を指定できます。開いている無関係な文書や、未保存の編集がある文書を勝手に閉じないよう進めます。</p>
+<p><a href="assets/workflow/11_4点ずつのレビュー依頼.gif"><img alt="工程11　確認する単位の指定" src="assets/workflow/posters/11.jpg" /></a></p>
+<p><a id="step-12"></a></p>
+<h2>12　VectorCraftで微調整</h2>
+<p>文字グループを選んで、位置・大きさ・行間を調整します。自分で動かしても、Codexに修正を頼んでも構いません。</p>
+<p>語句ごとに文字本体と内外の縁取りがまとまっていれば、一緒に動かせます。縁取りの色別に別の語句までまとめられている場合は、語句単位に直してもらいます。文字とキャラクター、装飾は分けて編集できる状態にします。</p>
+<p>縮小したときにセリフが読めるか、顔やポーズの印象が伝わるかを見ます。1点につき1つの <code>.vectorcraft</code> ファイルに保存します。</p>
+<p><a href="assets/workflow/12_VectorCraftで文字の微調整.gif"><img alt="工程12　VectorCraftで微調整" src="assets/workflow/posters/12.jpg" /></a></p>
+<p><a id="step-13"></a></p>
+<h2>13　完了報告と次のセット</h2>
+<p>現在の確認単位を調整し終えたら、Codexに伝えます。</p>
+<blockquote>
+<p>最初の4点の調整が完了しました。変更を保存して、次の4点を開いてください。</p>
+</blockquote>
+<p>Codexが変更を保存して確認の記録を残し、次の単位へ進みます。全点とMain・Tabの確認が終わるまで繰り返します。確認後にデザインやセリフが変わった場合は、変更後の内容をもう一度確認します。</p>
+<p><a href="assets/workflow/13_完了報告と次の4点への切り替え.gif"><img alt="工程13　完了報告と次のセット" src="assets/workflow/posters/13.jpg" /></a></p>
+<p><a id="step-14"></a></p>
+<h2>14　PNGと登録用ZIPの受け取り</h2>
+<blockquote>
+<p>全点の調整が完了しました。最新版から透過PNG、Main・Tab、LINE登録用ZIP、タグ検索候補、検証記録を用意してください。</p>
+</blockquote>
+<p>Codexが確認済みの編集ファイルから出力します。現行の<a href="https://creator.line.me/ja/guideline/sticker/">LINE公式仕様</a>を確認し、寸法、透過、容量、余白、解像度、フォントを検査します。明暗両背景と実寸でも最終PNGを目視します。出力が変わった場合は、新しい画像を再確認します。</p>
+<p>2026-11-02に確認した<a href="https://creator.line.me/ja/guideline/sticker/">LINE公式仕様</a>では、Mainは240×240px、Tabは96×74px、スタンプ本体は最大370×320pxのPNGです。編集用の正方形キャンバスと、登録用の寸法を混同しないでください。</p>
+<p>受け取る場所は <code>projects/&lt;作品名&gt;/output/</code> です。<code>upload.zip</code> はスタンプ本体とMain・TabのPNGだけを含みます。<code>tags.txt</code> と検証記録は別に受け取り、ZIPの枚数・連番・内容も確認します。</p>
+<p><a href="assets/workflow/14_PNGと登録用ZIPの準備.gif"><img alt="工程14　PNGと登録用ZIPの受け取り" src="assets/workflow/posters/14.jpg" /></a></p>
+<p><a id="step-15"></a></p>
+<h2>15　登録する文面の確定</h2>
+<p>日本語・英語のキャラクター名、タイトル、説明文を最終確認します。候補のまま残っている文面があれば、この段階で決めます。</p>
+<blockquote>
+<p>登録に使うタイトルと説明文を、日本語・英語でまとめてください。キャラクターの名前表記を統一し、文字数も確認してください。</p>
+</blockquote>
+<p>作品フォルダのファイル名だけで判断せず、登録画面へ入力する確定文面を使います。動画内の名前やタイトルは制作例です。</p>
+<p><a href="assets/workflow/15_名前表記と登録文面の調整.gif"><img alt="工程15　登録する文面の確定" src="assets/workflow/posters/15.jpg" /></a></p>
+<p><a id="step-16"></a></p>
+<h2>16　LINEの表示情報と販売情報</h2>
+<p><a href="https://creator.line.me/ja/">LINE Creators Market</a>へログインし、新規登録から「スタンプ」を選びます。初めて使う場合は、先に<a href="registration.html#account">クリエイター登録</a>を済ませます。</p>
+<p>確定した英語のタイトル・説明文を入力し、日本語でも掲載する場合は言語を追加します。クリエイター名、コピーライト、公開範囲、販売エリア、販売開始方法なども、自分の希望と制作内容に合わせて設定します。</p>
+<p>「AIの使用」は制作の実態に合わせて申告します。AI生成素材を使った作品では、その使用を設定します。<a href="https://help2.line.me/creators/web/categoryId/20002312/3/pc?contentId=200001335&amp;lang=ja">公式ヘルプ</a>と、<a href="registration.html#details">登録ガイドの詳しい説明</a>も確認できます。</p>
+<p><a href="assets/workflow/16_LINEの表示情報と販売情報の入力.gif"><img alt="工程16　LINEの表示情報と販売情報" src="assets/workflow/posters/16.jpg" /></a></p>
+<p><a id="step-17"></a></p>
+<h2>17　登録用ZIPのアップロード</h2>
+<p>「スタンプ画像」タブから編集画面を開き、スタンプ個数を作品の枚数に合わせます。「ZIPファイルアップロード」から <code>output/upload.zip</code> を選びます。</p>
+<p><strong>確認すること：</strong> Main・Tabと全スタンプが正しい枠に入り、空欄やエラーがないこと。枚数と並び順が予定どおりで、背景色を切り替えても透過や文字の縁が正しく見えること。</p>
+<p>詳しい画面の見方は<a href="registration.html#images">画像アップロードの説明</a>を参照してください。</p>
+<p><a href="assets/workflow/17_登録用ZIPのアップロード.gif"><img alt="工程17　登録用ZIPのアップロード" src="assets/workflow/posters/17.jpg" /></a></p>
+<p><a id="step-18"></a></p>
+<h2>18　各スタンプのタグ設定</h2>
+<p>「タグ設定」から各スタンプの「編集」を開き、絵やセリフに合う候補を選びます。<code>output/tags.txt</code> は検索語を探すための手元資料として使います。</p>
+<p>一覧に合う候補がなければ検索します。検索語と登録できるタグは同じとは限らないので、実際に表示される候補から意味が合うものを選びます。最大9個の枠を埋める必要はありません。<a href="https://note.com/line_cm/n/n846009d35f27">LINE公式のタグ設定ガイド</a>も参照できます。</p>
+<p><a href="assets/workflow/18_スタンプのタグ設定.gif"><img alt="工程18　各スタンプのタグ設定" src="assets/workflow/posters/18.jpg" /></a></p>
+<p><a id="step-19"></a></p>
+<h2>19　販売価格の確認</h2>
+<p>「販売価格情報」タブを開き、表示される選択肢から価格を選んで保存します。参加する企画がある場合は、その条件も確認します。</p>
+<p>動画内の価格へ合わせる必要はありません。自分の作品の販売条件と、現在の画面の注意書きを確認してください。<a href="registration.html#price">価格設定の説明</a>も参照できます。</p>
+<p><a href="assets/workflow/19_販売価格の確認.gif"><img alt="工程19　販売価格の確認" src="assets/workflow/posters/19.jpg" /></a></p>
+<p><a id="step-20"></a></p>
+<h2>20　審査リクエストと審査待ち</h2>
+<p>プレビューで、タイトル・説明文・画像・タグ・販売設定を最終確認します。問題がなければ「リクエスト」を押し、説明と同意事項を読んでから申請します。</p>
+<p>申請後に「審査待ち」と表示されることを確認します。審査待ちは販売開始とは別の段階です。承認後は、選んだ販売開始方法に従って進めます。詳しくは<a href="registration.html#request">審査申請</a>と<a href="registration.html#release">承認後の販売開始</a>を参照してください。</p>
+<p>このGIFは審査待ちまでを収録しています。初回クリエイター登録と承認後の販売開始の操作画面は含みません。</p>
+<p><a href="assets/workflow/20_審査リクエストと審査待ちの確認.gif"><img alt="工程20　審査リクエストと審査待ち" src="assets/workflow/posters/20.jpg" /></a></p>
+<h2>途中から再開する場合</h2>
+<p>同じ作業フォルダをCodexで開き、次のように伝えます。</p>
+<blockquote>
+<p>前回の作品の続きから進めてください。保存済みの画像と編集ファイルを確認し、未完了の工程から再開してください。</p>
+</blockquote>
+<p>作品の設定、進行記録、実際のファイルを照合して続きへ進みます。参考画像や調整済みのデザインを、理由なく作り直す必要はありません。</p>
+<p>詳しい登録画面は<a href="registration.html">スクリーンショット付き登録ガイド</a>、保存するデータは<a href="../README.md#保存先と続きからの再開">READMEの保存先と再開方法</a>で確認できます。</p></main><script>
+const players=[];
+function stop(player){
+  if(player.button.getAttribute('aria-pressed')==='true')player.image.src=player.poster;
+  player.button.setAttribute('aria-pressed','false');
+  player.button.setAttribute('aria-label',player.title+'のGIFを再生');
+  player.label.textContent='▶ GIFを再生';
+}
+for(const link of document.querySelectorAll('main a[href$=".gif"]')){
+  const image=link.querySelector('img');
+  if(!image)continue;
+  const gif=link.getAttribute('href'),poster=image.getAttribute('src'),title=image.alt;
+  const figure=document.createElement('figure');figure.className='workflow-demo';
+  const button=document.createElement('button');button.type='button';button.className='workflow-player';
+  const label=document.createElement('span');
+  image.loading='lazy';image.width=1404;image.height=962;
+  button.append(image,label);figure.append(button);
+  const caption=document.createElement('figcaption');
+  const direct=document.createElement('a');direct.href=gif;direct.textContent='GIFを原寸で開く';
+  caption.append('操作例 · ',direct);figure.append(caption);
+  const container=link.parentElement;
+  if(container.tagName==='P'&&container.children.length===1)container.replaceWith(figure);
+  else link.replaceWith(figure);
+  const player={button,image,label,gif,poster,title};players.push(player);stop(player);
+  button.addEventListener('click',()=>{
+    const playing=button.getAttribute('aria-pressed')==='true';players.forEach(stop);
+    if(!playing){image.src=gif;button.setAttribute('aria-pressed','true');button.setAttribute('aria-label',title+'のGIFを停止');label.textContent='■ 停止';}
+  });
+}
+document.addEventListener('visibilitychange',()=>{if(document.hidden)players.forEach(stop)});
+</script></body></html>

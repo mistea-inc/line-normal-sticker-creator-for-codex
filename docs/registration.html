@@ -1,0 +1,233 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LINEスタンプ登録ガイド</title><style>
+:root{color-scheme:light;--ink:#24332d;--muted:#5b6c63;--line:#dbe5df;--accent:#087c43}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f4f7f5;color:var(--ink);font:16px/1.85 system-ui,-apple-system,'Segoe UI','Noto Sans JP',sans-serif}
+main{max-width:1060px;margin:32px auto;padding:40px 52px;background:#fff;border:1px solid var(--line);border-radius:16px}
+h1{font-size:2rem;line-height:1.45;margin:0 0 24px}h2{font-size:1.35rem;margin:52px 0 18px;padding-top:22px;border-top:2px solid var(--line);scroll-margin-top:24px}
+p,ul,ol{margin:16px 0}li{padding:3px 0}a{color:var(--accent);text-underline-offset:3px}code{padding:2px 5px;background:#eff3f1;border-radius:4px;font-size:.9em;overflow-wrap:anywhere}
+table{width:100%;border-collapse:collapse;margin:22px 0;font-size:.95rem}th,td{padding:12px 14px;border:1px solid var(--line);text-align:left;vertical-align:top}th{background:#edf5f0}td:first-child{min-width:145px}
+img{display:block;max-width:100%;height:auto;margin:22px 0 8px;border:1px solid #dce2df;border-radius:5px;cursor:zoom-in}p:has(img){margin:22px 0}
+.guide-nav{display:flex;gap:8px;flex-wrap:wrap;margin:24px 0}.guide-nav a{border:1px solid var(--line);padding:5px 12px;border-radius:8px;text-decoration:none;background:#f7faf8}
+.tip{font-size:.9rem;color:var(--muted);margin-bottom:28px}dialog{border:0;border-radius:10px;max-width:96vw;max-height:94vh;padding:18px;overflow:auto}dialog::backdrop{background:#14271ed9}dialog img{max-width:none;margin:0;cursor:default}.close{position:sticky;top:0;float:right;z-index:2;font:inherit;padding:6px 14px;background:#fff;border:1px solid #bccdc3;border-radius:7px;cursor:pointer}
+@media(max-width:700px){main{margin:0;border:0;border-radius:0;padding:25px 18px}h1{font-size:1.6rem}table{font-size:.85rem}th,td{padding:8px}td:first-child{min-width:95px}}
+@media print{body{background:white}main{margin:0;padding:0;border:0}.guide-nav,.tip{display:none}h2{break-after:avoid}img{max-height:70vh;object-fit:contain;break-inside:avoid}a{color:inherit}}
+</style></head><body><main><p class="tip">画像をクリックすると原寸で確認できます。「閉じる」またはEscキーで本文へ戻れます。</p><h1>LINEスタンプ登録ガイド</h1>
+<p>このプロジェクトで作った通常の静止画スタンプを、PCブラウザ版のLINE Creators Marketへ登録する手順です。</p>
+<p>画面確認日：2026-11-02。画面は複数の操作例を手順順に並べています。枚数・価格・参加設定は、登録する作品に合わせて選んでください。アドレス欄とアカウント固有の情報はガイド画像から省略しています。</p>
+<p><strong>登録の流れ：準備 → クリエイター登録 → 表示情報 → 画像 → タグ → 価格 → 審査リクエスト → 承認後の販売開始</strong></p>
+<nav class="guide-nav" aria-label="手順へのリンク"><a href="#prepare">準備</a><a href="#account">初回登録</a><a href="#new">新規登録</a><a href="#details">表示情報</a><a href="#images">画像</a><a href="#tags">タグ</a><a href="#price">価格</a><a href="#request">審査申請</a><a href="#release">販売開始</a></nav>
+
+<p><a id="prepare"></a></p>
+<h2>登録前に用意するもの</h2>
+<table>
+<thead>
+<tr>
+<th>用意するもの</th>
+<th>このプロジェクトでの場所・確認事項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>アップロード用ZIP</td>
+<td><code>projects/&lt;作品名&gt;/output/upload.zip</code>。スタンプPNGとMain・Tabを格納したもの</td>
+</tr>
+<tr>
+<td>タグ検索候補</td>
+<td>同じ <code>output/</code> の <code>tags.txt</code></td>
+</tr>
+<tr>
+<td>英語のタイトルと説明文</td>
+<td>制作時に確定した文面。キャラクターの英語名も統一する</td>
+</tr>
+<tr>
+<td>日本語など追加言語の文面</td>
+<td>掲載する言語ごとの確定したタイトルと説明文</td>
+</tr>
+<tr>
+<td>販売に使う表示・設定</td>
+<td>クリエイター名、コピーライト、公開範囲、販売エリア、価格、販売開始方法</td>
+</tr>
+</tbody>
+</table>
+<p>まずCodexに「最終ZIPと登録に使う確定文面を確認して」と伝え、未決定の候補をそのまま入力しないようにします。</p>
+<p>Mainは240×240px、Tabは96×74pxです。スタンプ本体のPNGと合わせて、制作時点の<a href="https://creator.line.me/ja/guideline/sticker/">LINE公式ガイドライン</a>を確認してください。</p>
+<p><a id="account"></a></p>
+<h2>初めて使う場合はクリエイター登録</h2>
+<p>LINE Creators Marketの利用が初めての場合は、次の順に進めます。すでにマイページを開ける場合は次の手順へ進めます。</p>
+<ol>
+<li><a href="https://creator.line.me/ja/">LINE Creators Market</a>の「登録はこちら」からLINEアカウントでログインします。</li>
+<li>画面に従ってクリエイター情報を入力します。</li>
+<li>登録確認メールに届いたURLを開きます。</li>
+<li>登録完了後、ログインしてマイページを開きます。</li>
+</ol>
+<p>この初回登録部分のスクリーンショットは未収録です。<a href="https://help2.line.me/creators/web/categoryId/20002317/3/pc?lang=ja">公式の登録方法</a>も参照してください。</p>
+<p><a id="new"></a></p>
+<h2>1　マイページから新規登録</h2>
+<p>画面が英語表示の場合は、右上の言語メニューから日本語へ切り替えると、このガイドと照合しやすくなります。</p>
+<p><img alt="右上の言語メニューの例" src="assets/registration/00-language.png" /></p>
+<p>マイページ左上の「新規登録」を押します。</p>
+<p><img alt="マイページ左上の新規登録ボタン" src="assets/registration/01-dashboard.png" /></p>
+<p>次の画面で「スタンプ」を選びます。</p>
+<p><img alt="新規登録するアイテムの種類を選ぶ画面" src="assets/registration/02-new-item.png" /></p>
+<p><a id="details"></a></p>
+<h2>2　タイプと表示情報を入力</h2>
+<p>静止画のセットでは、スタンプのタイプに「スタンプ」を選びます。画像の枚数は、後のスタンプ編集画面で設定します。</p>
+<p><img alt="スタンプのタイプと言語別のタイトル・説明文の入力欄" src="assets/registration/03-details.png" /></p>
+<ol>
+<li>Englishのタイトルとスタンプ説明文に、確定した英語の文面を入力します。</li>
+<li>日本語でも掲載する場合は「言語を追加」で日本語を追加します。</li>
+<li>追加した言語のタイトルと説明文も入力します。</li>
+<li>入力欄の文字数表示と、保存時の検証結果を確認します。</li>
+</ol>
+<p>画像は入力前の状態です。実際の登録では、確定した文面を入れてください。タイトル・説明文・キャラクター名の表記が、制作時の取り決めと一致しているか確認します。</p>
+<h2>3　販売情報と開始方法を確認</h2>
+<p>同じ登録フォームを下へ進むと、販売情報の項目があります。</p>
+<p><img alt="販売情報とAIの使用・公開設定の入力欄" src="assets/registration/04-sales.png" /></p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>確認する内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>クリエイター名</td>
+<td>アカウントに設定された表示名を確認する。画像では固有情報を伏せている</td>
+</tr>
+<tr>
+<td>コピーライト</td>
+<td>制作時に確定した表記を、入力条件に合わせて設定する</td>
+</tr>
+<tr>
+<td>AIの使用</td>
+<td>制作の実態に合わせて設定する。本プロジェクトでAI生成素材を使用した作品は、その使用を申告する</td>
+</tr>
+<tr>
+<td>テイスト・キャラクターカテゴリ</td>
+<td>作品の内容に合う選択肢を選ぶ</td>
+</tr>
+<tr>
+<td>プライベート設定</td>
+<td>ショップでの公開範囲を、利用目的に合わせて選ぶ</td>
+</tr>
+<tr>
+<td>LINEスタンプ プレミアム</td>
+<td>参加するか、画面の説明を読んで決める</td>
+</tr>
+<tr>
+<td>販売エリア</td>
+<td>販売したい地域と、適用される条件を確認する</td>
+</tr>
+<tr>
+<td>特集企画</td>
+<td>参加する場合は、対象作品・受付期間・価格・販売エリアなどの条件を確認する</td>
+</tr>
+</tbody>
+</table>
+<p>「AIの使用」の意味と設定方法は、<a href="https://help2.line.me/creators/web/categoryId/20002312/3/pc?contentId=200001335&amp;lang=ja">公式ヘルプ</a>で確認できます。</p>
+<p>さらに下には、スタンプアレンジ機能、コラボレーション、お試し送信キャンペーンなどの選択肢があります。表示された初期値をそのまま確定せず、各項目の説明に沿って選びます。</p>
+<p><img alt="スタンプアレンジ機能とコラボレーションの設定例" src="assets/registration/05-options.png" /></p>
+<p>販売開始設定は、承認後の操作を左右します。</p>
+<ul>
+<li><strong>手動で販売を開始</strong>：承認後、ユーザーが販売開始の操作を行う方式。</li>
+<li><strong>自動で販売を開始</strong>：承認後に自動で販売を始める方式。参加キャンペーンに開始日の指定がある場合は、その条件を確認する。</li>
+</ul>
+<p>写真の使用やライセンス証明の項目も実際の制作内容に合わせて確認し、必要な資料を用意します。入力内容を確認して「保存」を押します。</p>
+<p><img alt="販売開始設定とライセンス証明・保存ボタン" src="assets/registration/06-license-save.png" /></p>
+<p>販売開始設定の詳細は、<a href="https://help2.line.me/creators/web/categoryId/20002318/3/pc?contentid=20005124&amp;lang=ja">公式の販売ヘルプ</a>を参照してください。</p>
+<p><a id="images"></a></p>
+<h2>4　画像をアップロード</h2>
+<p>保存後のアイテム管理画面で「スタンプ画像」タブを開き、下部の「編集」を押します。</p>
+<p><img alt="スタンプ画像タブと編集ボタン" src="assets/registration/07-image-tab.png" /></p>
+<p>スタンプの編集画面で、次の順に登録します。</p>
+<ol>
+<li>「スタンプ個数」の選択欄を、制作したセットの枚数に合わせます。</li>
+<li>「ZIPファイルアップロード」を押し、作品の <code>output/upload.zip</code> を選びます。</li>
+<li>アップロード結果とエラー表示を確認します。</li>
+<li>Main、Tab、すべてのスタンプが正しい枠へ入り、予定した順序になっているか確認します。</li>
+<li>画面の背景色を切り替えて、透過や白い縁の見え方も確認します。</li>
+</ol>
+<p><img alt="枚数の選択とZIPファイルアップロード・背景色の切り替え" src="assets/registration/08-upload.png" /></p>
+<p>画像例の「8個」は画面撮影時の値です。制作したセットが24点なら24個など、作品と一致する枚数を選びます。MainとTabはスタンプ本体の個数には含めません。</p>
+<table>
+<thead>
+<tr>
+<th>登録枠</th>
+<th>アップロード用ファイル</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>main</td>
+<td><code>main.png</code></td>
+</tr>
+<tr>
+<td>tab</td>
+<td><code>tab.png</code></td>
+</tr>
+<tr>
+<td>01以降</td>
+<td><code>01.png</code>、<code>02.png</code>などの連番</td>
+</tr>
+</tbody>
+</table>
+<p>上の静止画像はアップロード前の枠を示しています。アップロード後に画像が並ぶ様子は、<a href="workflow.html#step-17">制作手順書の工程17</a>のGIFで確認できます。空欄がなく、エラーも解消していることを実際の画面で確認してください。</p>
+<p><a id="tags"></a></p>
+<h2>5　タグを設定</h2>
+<p>アイテム管理の「タグ設定」タブを開き、各スタンプの「編集」からタグ候補を選びます。作品の <code>output/tags.txt</code> は、適切な候補を探すための手元資料です。</p>
+<ol>
+<li>対象のスタンプを選びます。</li>
+<li>セリフや感情に合う候補を検索・選択します。</li>
+<li>各スタンプについて、意味が合っているか確認します。</li>
+</ol>
+<p>1点につき設定できるタグは最大9個です。枠を埋めるために無関係なタグを付けず、表示された候補から選んでください。設定方法と保存の扱いは<a href="https://note.com/line_cm/n/n846009d35f27">LINE公式のタグ設定ガイド</a>を参照してください。</p>
+<p>タグ候補を選び、検索して追加する操作は、<a href="workflow.html#step-18">制作手順書の工程18</a>のGIFで確認できます。この節のタグ上限と保存の扱いは、上記の公式情報も照合しています。</p>
+<p><a id="price"></a></p>
+<h2>6　販売価格を設定</h2>
+<p>「販売価格情報」タブを開き、希望する価格を選んで「保存」を押します。</p>
+<p><img alt="販売価格情報タブと価格選択・保存ボタン" src="assets/registration/09-price.png" /></p>
+<p>画像の価格は撮影時の例です。販売エリア、スタンプの種類、参加企画などにより条件が変わるため、現在の選択肢と注意書きを確認してください。<a href="https://help2.line.me/creators/web/categoryId/20002318/3/pc?contentid=20005124&amp;lang=ja">公式の販売価格の案内</a></p>
+<p><a id="request"></a></p>
+<h2>7　プレビューして審査リクエスト</h2>
+<p>「プレビュー」で表示を確認し、次の項目を一つずつ照合します。</p>
+<ul>
+<li>言語ごとのタイトル・説明文と名前表記が正しい。</li>
+<li>AIの使用、公開範囲、販売エリア、価格、販売開始方法が希望どおり。</li>
+<li>Main・Tabと全スタンプが登録され、枚数と並び順が正しい。</li>
+<li>文字が読め、意図しない背景や透過漏れ、見切れがない。</li>
+<li>設定したタグが、各スタンプの内容に合っている。</li>
+<li>キャンペーンへ参加する場合は、その条件を満たしている。</li>
+</ul>
+<p>確認できたら、右上の「リクエスト」を押します。</p>
+<p><img alt="アイテム管理画面右上のリクエストボタン" src="assets/registration/10-request-button.png" /></p>
+<p>確認画面の説明と同意事項を読み、内容を確認した上で「同意します」にチェックし、「OK」を押します。この操作で審査を申請します。</p>
+<p><img alt="審査リクエストの確認画面と同意・OKボタン" src="assets/registration/11-request-dialog.png" /></p>
+<h2>8　審査待ちを確認</h2>
+<p>申請後は、ステータスと申請済みの案内を確認します。画像は「審査待ち」の例です。</p>
+<p><img alt="審査リクエスト済みと審査待ちの表示" src="assets/registration/12-waiting.png" /></p>
+<p>審査待ちは販売開始とは別の段階です。結果を確認し、修正の案内があれば対応します。</p>
+<p><a id="release"></a></p>
+<h2>9　承認後に販売開始</h2>
+<p>登録時に選んだ販売開始設定に応じて進めます。</p>
+<table>
+<thead>
+<tr>
+<th>販売開始設定</th>
+<th>承認後の流れ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>手動で販売を開始</td>
+<td>アイテム管理で対象作品を開き、「リリース」から販売を開始する</td>
+</tr>
+<tr>
+<td>自動で販売を開始</td>
+<td>承認後に自動で販売が始まる。開始日指定のキャンペーンは、その条件に従う</td>
+</tr>
+</tbody>
+</table>
+<p>この承認後の画面は未収録です。上の分岐は<a href="https://help2.line.me/creators/web/categoryId/20002318/3/pc?contentid=20005124&amp;lang=ja">公式ヘルプ</a>に基づきます。販売開始後は、作品の販売ページでタイトル、説明、Main、全画像、価格の表示を確認します。</p>
+<h2>画面例について</h2>
+<p>画面例は2026-11-02時点の操作を示しています。枚数・価格・参加設定は、あなたの作品に合わせて選んでください。初回クリエイター登録と承認後の販売開始の画面例は未収録のため、各項目の公式情報も参照してください。</p>
+<p>ボタン名や入力条件が変わった場合は、現在の実画面と公式情報を優先してください。<a href="https://creator.line.me/ja/guideline/sticker/">制作ガイドライン</a>と<a href="https://creator.line.me/ja/howto/">公式の全体フロー</a>も合わせて確認できます。</p></main><dialog id="viewer" aria-label="スクリーンショットの拡大表示"><button class="close" type="button">閉じる</button><img alt=""></dialog><script>const dialog=document.getElementById("viewer");document.querySelectorAll("main img").forEach(img=>{img.tabIndex=0;img.setAttribute("role","button");const open=()=>{const enlarged=dialog.querySelector("img");enlarged.src=img.src;enlarged.alt=img.alt;dialog.showModal()};img.addEventListener("click",open);img.addEventListener("keydown",event=>{if(event.key==="Enter"||event.key===" "){event.preventDefault();open()}})});dialog.querySelector("button").addEventListener("click",()=>dialog.close());dialog.addEventListener("click",event=>{if(event.target===dialog)dialog.close()});</script></body></html>
